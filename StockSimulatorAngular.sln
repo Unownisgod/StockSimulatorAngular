@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "StockSimulatorAngular", "StockSimulatorAngular\StockSimulatorAngular.esproj", "{943E09EE-373E-43A6-84A2-77DFA20BDCAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943E09EE-373E-43A6-84A2-77DFA20BDCAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0C89D6D-D9E0-4344-AF9F-B6AA16DC2702}
+	EndGlobalSection
+EndGlobal
