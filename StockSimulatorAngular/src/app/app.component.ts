@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
       this.setChart()
       this.player.money = 5000;
       this.updatePlayersMoney();
-      //do it again each second
+      //do it again eery 3 seconds
       setInterval(() => this.getStocks(this.companies), 3000);
     }
 
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < arrayLength; i++) {
 
       //Generate the difference between last and current stock value
-      var difference = Math.floor(Math.random() * (60 - (-55)) + (-55));
+      var difference = parseFloat((Math.random() * (60.0 - (-55.0)) + (-55.0)).toFixed(2));
 
       //gets the new stick value using (value + (value + differece/100)) and gets 2 decimals
       let stockValue: number = +(this.stockHistory[i].stockValues[0].stockValue + this.stockHistory[i].stockValues[0].stockValue * difference / 100.0).toFixed(2);

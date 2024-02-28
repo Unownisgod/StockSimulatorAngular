@@ -25,7 +25,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions0"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4 mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[0].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[0].stockValues[0].StockDifference > 0" >
+                <p [innerText]=" '↑ ' + (stockHistory[0].stockValues[0].stockValue * stockHistory[0].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[0].stockValues[0].StockDifference + '%)'">
+                  
+                </p>
+              </div>
+              <div *ngIf="stockHistory[0].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[0].stockValues[0].stockValue * stockHistory[0].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[0].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4 mb-4">
             <div class=" col-10 justify-content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2">
@@ -40,7 +54,7 @@
               </div>
             </div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row d-flex justify-content-center mb-4">
             <div class="col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-3 col-6 mb-2">
@@ -65,7 +79,22 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions1"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[1].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[1].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[1].stockValues[0].stockValue * stockHistory[1].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[1].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[1].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[1].stockValues[0].stockValue * stockHistory[1].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[1].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mb-4">
             <div class="col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -105,7 +134,22 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions2"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[2].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[2].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[2].stockValues[0].stockValue * stockHistory[2].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[2].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[2].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[2].stockValues[0].stockValue * stockHistory[2].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[2].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -145,7 +189,22 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions3"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[3].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -185,7 +244,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions4"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[4].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[4].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[4].stockValues[0].stockValue * stockHistory[4].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[4].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[4].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[4].stockValues[0].stockValue * stockHistory[4].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[4].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -225,7 +298,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions5"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[5].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[5].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[5].stockValues[0].stockValue * stockHistory[5].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[5].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[5].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[5].stockValues[0].stockValue * stockHistory[5].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[5].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -265,7 +352,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions6"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[3].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -305,7 +406,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions7"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[7].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[7].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[7].stockValues[0].stockValue * stockHistory[7].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[7].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[7].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[7].stockValues[0].stockValue * stockHistory[7].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[7].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -345,7 +460,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions8"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[8].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[3].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[3].stockValues[0].stockValue * stockHistory[3].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[3].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
@@ -385,7 +514,21 @@
           <div class="row justify-content-center mt-5 mb-3">
             <div style="width: 80%;"><canvas id="acquisitions9"></canvas></div>
           </div>
-          <div class="row row d-flex justify-content-center mb-4">
+          <div class="row mb-3 justify-content-center font-weight-bold">
+            <div class="col-10" class="{{ stockHistory[9].stockValues[0].StockDifference > 0 ? 'text-success' : 'text-danger'}}">
+              <div *ngIf="stockHistory[9].stockValues[0].StockDifference > 0">
+                <p [innerText]=" '↑ ' + (stockHistory[9].stockValues[0].stockValue * stockHistory[9].stockValues[0].StockDifference / 100).toFixed(2) + '   (+' + stockHistory[9].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+              <div *ngIf="stockHistory[9].stockValues[0].StockDifference < 0">
+                <p [innerText]=" '↓ ' + (stockHistory[9].stockValues[0].stockValue * stockHistory[9].stockValues[0].StockDifference / 100).toFixed(2) + '   (' + stockHistory[9].stockValues[0].StockDifference + '%)'">
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mb-4">
             <div class=" col-10 col-md-10 content-center">
               <div class="row justify-content-center">
                 <div class="col-md-4 col-6 mb-2 ">
