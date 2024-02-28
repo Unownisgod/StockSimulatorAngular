@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
         this.stockHistory[i].stockValues.push({ stockValue: stockInitialValue, StockDifference: 0 });
       }
       this.setChart()
+      this.getStocks(this.companies)
       this.player.money = 5000;
       this.updatePlayersMoney();
       //do it again eery 3 seconds
