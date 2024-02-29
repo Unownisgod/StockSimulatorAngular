@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   Chart, registerables
 } from 'chart.js';
@@ -24,35 +25,37 @@ interface Player {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   //StoackHisroty contains the previous (10?) stock values for all the companies stock
   public stockHistory: StockHistory[] = [];
   public charts: Array<Chart> = [];
   public player: Player = { money: 5000, stock: [] };
   public companies: number = 10;
-  constructor(private http: HttpClient) {
+  constructor(private title: Title) {
+    this.title.setTitle("Stock Simulation")
   }
-    ngOnInit() {
-      //starts stockhistory with a size of 10 (maybe expand later)
-      this.stockHistory = new Array<StockHistory>(this.companies)
-      //gets the companes' names
-      let companyName = this.generateCompany(this.companies);
-      //for each stock fill the values with random values
-      for (let i = 0; i < this.companies; i++) {
-        this.player.stock.push(0);
-        this.stockHistory[i] = { companyName: companyName[i], stockValues: [] }
-        let stockInitialValue = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
-        this.stockHistory[i].stockValues.push({ stockValue: stockInitialValue, StockDifference: 0 });
-      }
-      //sets up the charts
-      this.setChart()
+  ngOnInit() {
 
-      //sets the base stocks to work with
-      this.getStocks(this.companies)
 
-      //do it again eery 3 seconds
-      setInterval(() => this.getStocks(this.companies), 3000);
+    //starts stockhistory with a size of 10 (maybe expand later)
+    this.stockHistory = new Array<StockHistory>(this.companies)
+    //gets the companes' names
+    let companyName = this.generateCompany(this.companies);
+    //for each stock fill the values with random values
+    for (let i = 0; i < this.companies; i++) {
+      this.player.stock.push(0);
+      this.stockHistory[i] = { companyName: companyName[i], stockValues: [] }
+      let stockInitialValue = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
+      this.stockHistory[i].stockValues.push({ stockValue: stockInitialValue, StockDifference: 0 });
     }
+    //sets up the charts
+    this.setChart()
+
+    //sets the base stocks to work with
+    this.getStocks(this.companies)
+
+    //do it again eery 3 seconds
+    setInterval(() => this.getStocks(this.companies), 3000);
+  }
 
   async getStocks(arrayLength: number) {
 
@@ -227,5 +230,4 @@ export class AppComponent implements OnInit {
 
     this.updatePlayersMoney()
   }
-  title = 'stocksimulator.client';
 }
