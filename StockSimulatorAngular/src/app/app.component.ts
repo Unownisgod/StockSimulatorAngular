@@ -44,10 +44,12 @@ export class AppComponent implements OnInit {
         let stockInitialValue = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
         this.stockHistory[i].stockValues.push({ stockValue: stockInitialValue, StockDifference: 0 });
       }
+      //sets up the charts
       this.setChart()
+
+      //sets the base stocks to work with
       this.getStocks(this.companies)
-      this.player.money = 5000;
-      this.updatePlayersMoney();
+
       //do it again eery 3 seconds
       setInterval(() => this.getStocks(this.companies), 3000);
     }
@@ -69,9 +71,8 @@ export class AppComponent implements OnInit {
       //depreciates anything after the 20th value
       this.stockHistory[i].stockValues = this.stockHistory[i].stockValues.slice(0, 20);
     }
-    console.log(this.stockHistory)
 
-
+    //update the charts value
     this.updateChart()
 
   }
@@ -79,18 +80,18 @@ export class AppComponent implements OnInit {
   //generates the companies names
   generateCompany(arrayLength: number): string[] {
     let nameList: string[] = [];
-    // For each element
 
+    // For each element
     for (let i = 0; i < arrayLength; i++) {
         var characters = "QERTYUIOPASDFGHJKLZXCVBNM"
 
         var result = "";
 
+        //Gets 3 random letters for the name
         for (let j = 0; j < 3; j++) {
           result += characters.charAt(Math.random() * 25);
         }
 
-        //if ok pushes it to the names list
         nameList.push(result);
     }
     //returns the list
@@ -163,20 +164,28 @@ export class AppComponent implements OnInit {
   }
 
   updatePlayersMoney() {
+    //rounds the player's money to 2 decimals
     this.player.money = parseFloat(this.player.money.toFixed(2))
 
+    //updates the dom
     document.getElementById("Money")!.innerHTML = "You have " + this.player.money.toString() + "$";
   }
 
   buyStock(event: MouseEvent) {
+    //searches for the target elements as HTML elements
     const buttonElement = event.target as HTMLElement;
+
+    //gets their ids and processes them
     var splittedId = buttonElement.id.split(" ")
     var stockAmount = parseInt(splittedId[0])
     var stockId = parseInt(splittedId[1])
 
+    //if player has enough money buys stocks
     if (this.player.money > this.stockHistory[stockId].stockValues[0].stockValue * stockAmount) {
 
+      //player pays for the stocks
       this.player.money -= (this.stockHistory[stockId].stockValues[0].stockValue * stockAmount);
+      //player gets the stock
       this.player.stock[stockId] += stockAmount;
 
     }
@@ -184,24 +193,36 @@ export class AppComponent implements OnInit {
   }
 
   sellStock(event: MouseEvent) {
+
+    //searches for the target elements as HTML elements
     const buttonElement = event.target as HTMLElement;
+
+    //gets their ids and processes them
     var id = buttonElement.id.split("-")[1];
     var splittedId = id.split(" ");
     var stockAmount = splittedId[0];
     var stockAmountNumber!: number;
     var stockId = parseInt(splittedId[1]);
 
+    //if sell all button pressed sell all they have
     if (stockAmount == "max") {
       stockAmountNumber = this.player.stock[stockId]
     }
+
+    //else set the ammount of stock to sell
     else {
       stockAmountNumber = parseInt(stockAmount)
     }
+
+    //if player has the stocks sell them
     if (stockAmountNumber > this.player.stock[stockId]) {
       stockAmountNumber = this.player.stock[stockId]
     }
 
+    //player gets the money
     this.player.money += this.stockHistory[stockId].stockValues[0].stockValue * stockAmountNumber;
+
+    //player loses the sold stock
     this.player.stock[stockId] -= stockAmountNumber;
 
     this.updatePlayersMoney()
